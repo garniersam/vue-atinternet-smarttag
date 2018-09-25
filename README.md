@@ -7,3 +7,7 @@
 ## Documentation
 
 [HERE](https://seb-l.github.io/vue-atinternet-smarttag/)
+
+## Contribute
+
+WIP
