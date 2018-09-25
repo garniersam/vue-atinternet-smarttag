@@ -123,3 +123,4 @@ export default {
 * [x] Add Bundler (rollup)
 * [x] Add Tests framework (Jest & Vue-test-utils)
 * [ ] Add a test case for vue-router auto page view
+* [ ] Doc website (vuepress)
