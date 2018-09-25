@@ -1,18 +1,6 @@
 language: node_js
 node_js: "9"
 cache: yarn
-# before_script: yarn
-# script:
-#   - yarn test
-#   - yarn build
-# deploy:
-#   provider: pages
-#   github_token: $GITHUB_TOKEN
-#   local_dir: dist
-#   skip_cleanup: true
-#   on:
-#     branch: master
-
 jobs:
   include:
     - stage: test
@@ -20,6 +8,13 @@ jobs:
       script:
         - yarn test
         - yarn build
+      script: echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: releases
+        api_key: $GITHUB_TOKEN
+        skip_cleanup: true
+        on:
+          tags: true
     - stage: docs
       script: yarn docs:build
       deploy:
