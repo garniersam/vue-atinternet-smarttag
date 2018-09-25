@@ -1,10 +1,10 @@
 language: node_js
 node_js: "9"
 cache: yarn
-before_script: yarn
-script:
-  - yarn test
-  - yarn build
+# before_script: yarn
+# script:
+#   - yarn test
+#   - yarn build
 # deploy:
 #   provider: pages
 #   github_token: $GITHUB_TOKEN
@@ -12,3 +12,20 @@ script:
 #   skip_cleanup: true
 #   on:
 #     branch: master
+
+jobs:
+  include:
+    - stage: test
+      before_script: yarn
+      script:
+        - yarn test
+        - yarn build
+    - stage: docs
+      script: yarn docs:build
+      deploy:
+        provider: pages
+        github_token: $GITHUB_TOKEN
+        local_dir: docs/.vuepress/dist
+        skip_cleanup: true
+        on:
+          branch: master
