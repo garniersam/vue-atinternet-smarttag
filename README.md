@@ -2,6 +2,11 @@
 
 AtInternet SmartTag implementation as a VueJs plugin and click tracking directive.
 
+At Internet SmartTag docs:
+
+* Pages tracking: https://developers.atinternet-solutions.com/javascript-en/content-javascript-en/pages-javascript-en/
+* Clicks tracking: https://developers.atinternet-solutions.com/javascript-en/content-javascript-en/clicks-javascript-en/
+
 ## Install
 
 ```javascript
