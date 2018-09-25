@@ -1,25 +1,26 @@
 {
-  "name": "vue-atinternet-tracker",
-  "version": "1.0.0",
-  "description": "At Internet tracker tag implementation as a VueJs plugin and click track directive.",
-  "main": "index.js",
+  "name": "vue-atinternet-smarttag",
+  "version": "0.0.1",
+  "description": "AtInternet SmartTag implementation as a VueJs plugin and click tracking directive.",
+  "main": "dist/index.min.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Seb-L/vue-atinternet-tracker.git"
+    "url": "git+https://github.com/Seb-L/vue-atinternet-smarttag.git"
   },
   "keywords": [],
   "author": "Seb-l",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Seb-L/vue-atinternet-tracker/issues"
+    "url": "https://github.com/Seb-L/vue-atinternet-smarttag/issues"
   },
-  "homepage": "https://github.com/Seb-L/vue-atinternet-tracker#readme",
+  "homepage": "https://github.com/Seb-L/vue-atinternet-smarttag#readme",
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@vue/test-utils": "^1.0.0-beta.25",
@@ -28,6 +29,11 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-uglify": "^6.0.0",
     "vue": "^2.5.17",
     "vue-jest": "^2.6.0",
     "vue-template-compiler": "^2.5.17"

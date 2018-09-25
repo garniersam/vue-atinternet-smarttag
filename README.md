@@ -1,13 +1,13 @@
-# vue-atinternet-tracker
+# vue-atinternet-smarttag
 
-At Internet tracker tag implementation as a VueJs plugin and click track directive.
+AtInternet SmartTag implementation as a VueJs plugin and click tracking directive.
 
 ## Install
 
 ```javascript
-import AtInternet from './plugins/at-internet'
+import smartTag from 'vue-atinternet-smarttag'
 
-Vue.use(AtInternet)
+Vue.use(smartTag)
 ```
 
 ## Use
@@ -19,13 +19,13 @@ export default {
   name: 'myComponent',
   methods: {
     trackMyPage () {
-      this.$atInternet.sendPage({
+      this.$smartTag.sendPage({
         name: 'Page name/label',
         chapter1: 'First chapter level'
       })
     },
     trackMyClick () {
-      this.$atInternet.sendClick({
+      this.$smartTag.sendClick({
         elem: 'Tagged DOM element',
         name: 'Click label/name'
       })
@@ -39,7 +39,7 @@ export default {
 ```javascript
 import Vue from 'vue'
 
-Vue.atInternet.sendPage({
+Vue.smartTag.sendPage({
   name: 'Page name/label',
   chapter1: 'First chapter level'
 })
@@ -49,7 +49,7 @@ Vue.atInternet.sendPage({
 
 Add an "atInternet" meta in your route with the data you want to send to at internet when arriving on the page.
 
-In this example, "atInternet" meta can be an object or a function returning an object.
+In this example, "smartTag" meta can be an object or a function returning an object.
 
 ```javascript
 import Router from 'vue-router'
@@ -64,7 +64,7 @@ const router = new Router({
       name: 'myFirstRoute',
       component: myFirstRouteComp,
       meta: {
-        atInternet: {
+        smartTag: {
           name: 'Page name/label',
           chapter1: 'First chapter level'
         }
@@ -74,7 +74,7 @@ const router = new Router({
       name: 'mySecondRoute',
       component: mySecondRouteComp,
       meta: {
-        atInternet () {
+        smartTag () {
           return {
             name: 'Page name/label',
             chapter1: 'First chapter level'
@@ -88,7 +88,7 @@ const router = new Router({
 // At Internet Tagging, "to.meta.atInternet" can be an object or a function returning an object
 router.afterEach((to, from) => {
   if (to.meta.atInternet) {
-    Vue.atInternet.sendPage(typeof to.meta.atInternet === 'function' ? to.meta.atInternet() : to.meta.atInternet)
+    Vue.smartTag.sendPage(typeof to.meta.smartTag === 'function' ? to.meta.smartTag() : to.meta.smartTag)
   }
 })
 
@@ -103,7 +103,7 @@ Use the "v-at-track-click" directive to automatically track clicks on dom object
 export default {
   template: `
     <div>
-      <button v-at-track-click="trackingData">My button</button>
+      <button v-smarttag-click="trackingData">My button</button>
     </div>
   `,
   data () {
@@ -120,6 +120,6 @@ export default {
 
 ## Todo
 
-* [ ] Add Bundler (rollup)
+* [x] Add Bundler (rollup)
 * [x] Add Tests framework (Jest & Vue-test-utils)
 * [ ] Add a test case for vue-router auto page view

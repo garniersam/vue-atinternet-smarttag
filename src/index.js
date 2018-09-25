@@ -1,9 +1,9 @@
 export default {
   install (Vue, options = { secure: true }) {
     // Service
-    const atInternet = {}
+    const smartTag = {}
 
-    atInternet.newTag = () => {
+    smartTag.newTag = () => {
       try {
         return new window.ATInternet.Tracker.Tag(options)
       } catch (ex) {
@@ -18,27 +18,27 @@ export default {
         }
       }
     }
-    atInternet.tag = atInternet.newTag()
+    smartTag.tag = smartTag.newTag()
 
     // Docs: https://developers.atinternet-solutions.com/javascript-fr/contenus-javascript-fr/pages-javascript-fr/
-    atInternet.sendPage = info => {
-      atInternet.tag.page.set(info)
-      atInternet.tag.dispatch()
+    smartTag.sendPage = info => {
+      smartTag.tag.page.set(info)
+      smartTag.tag.dispatch()
     }
 
     // Docs: https://developers.atinternet-solutions.com/javascript-fr/contenus-javascript-fr/clics-javascript-fr/
-    atInternet.sendClick = info => {
-      atInternet.tag.click.send(info)
+    smartTag.sendClick = info => {
+      smartTag.tag.click.send(info)
     }
 
-    Vue.atInternet = atInternet
-    Vue.prototype.$atInternet = atInternet
+    Vue.smartTag = smartTag
+    Vue.prototype.$smartTag = smartTag
 
-    // Directive v-at-track-click="{ myData: 'myValue' }"
-    Vue.directive('at-track-click', {
+    // Directive v-smarttag-click="{ myData: 'myValue' }"
+    Vue.directive('smarttag-click', {
       bind (el, binding, vnode, oldVnode) {
         el.addEventListener('click', () => {
-          Vue.atInternet.sendClick(binding.value)
+          Vue.smartTag.sendClick(binding.value)
         })
       }
     })
