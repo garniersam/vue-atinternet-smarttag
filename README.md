@@ -121,5 +121,5 @@ export default {
 ## Todo
 
 * [ ] Add Bundler (rollup)
-* [ ] Add Tests framework (Jest & Vue-test-utils)
+* [x] Add Tests framework (Jest & Vue-test-utils)
 * [ ] Add a test case for vue-router auto page view

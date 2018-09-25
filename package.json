@@ -4,20 +4,43 @@
   "description": "At Internet tracker tag implementation as a VueJs plugin and click track directive.",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Seb-L/vue-atinternet-tracker.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Seb-l",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Seb-L/vue-atinternet-tracker/issues"
   },
-  "homepage": "https://github.com/Seb-L/vue-atinternet-tracker#readme"
+  "homepage": "https://github.com/Seb-L/vue-atinternet-tracker#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@vue/test-utils": "^1.0.0-beta.25",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "vue": "^2.5.17",
+    "vue-jest": "^2.6.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  }
 }
