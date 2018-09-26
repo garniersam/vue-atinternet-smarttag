@@ -12,7 +12,12 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - yarn semantic-release
+          - yarn publish
+      # deploy:
+      #   provider: script
+      #   skip_cleanup: true
+      #   script:
+      #     - yarn semantic-release
       # deploy:
       #   provider: npm
       #   email: sebastien.lombard75@gmail.com
