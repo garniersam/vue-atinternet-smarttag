@@ -8,15 +8,11 @@ jobs:
       script:
         - yarn test
         - yarn build
-      script: echo "Deploying to GitHub releases ..."
       deploy:
         provider: script
         skip_cleanup: true
         script:
-          - npx semantic-release
-        branches:
-          except:
-            - /^v\d+\.\d+\.\d+$/
+          - yarn semantic-release
       # deploy:
       #   provider: npm
       #   email: sebastien.lombard75@gmail.com
