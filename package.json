@@ -10,7 +10,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "rollup -c",
-    "test": "jest --colors --coverage --coverageReporters=text-lcov | codacy-coverage"
+    "test": "jest --colors --coverage && cat ./coverage/lcov.info | codacy-coverage"
   },
   "repository": {
     "type": "git",
