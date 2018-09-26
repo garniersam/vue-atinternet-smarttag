@@ -8,11 +8,8 @@ jobs:
       script:
         - yarn test
         - yarn build
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - yarn publish
+      after_success:
+        - npm run ci-publish || true
       # deploy:
       #   provider: script
       #   skip_cleanup: true
