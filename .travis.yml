@@ -1,26 +1,34 @@
-# language: node_js
-# node_js: "9"
-# cache: yarn
-# jobs:
-#   include:
-#     - stage: test
-#       before_script: yarn
-#       script:
-#         - yarn test
-#         - yarn build
-#       script: echo "Deploying to GitHub releases ..."
-#       deploy:
-#         provider: npm
-#         email: sebastien.lombard75@gmail.com
-#         api_key: $NPM_TOKEN
-#         on:
-#           tags: true
-#     - stage: docs
-#       script: yarn docs:build
-#       deploy:
-#         provider: pages
-#         github_token: $GITHUB_TOKEN
-#         local_dir: docs/.vuepress/dist
-#         skip_cleanup: true
-#         on:
-#           branch: master
+language: node_js
+node_js: "9"
+cache: yarn
+jobs:
+  include:
+    - stage: test
+      before_script: yarn
+      script:
+        - yarn test
+        - yarn build
+      script: echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
+        branches:
+          except:
+            - /^v\d+\.\d+\.\d+$/
+      # deploy:
+      #   provider: npm
+      #   email: sebastien.lombard75@gmail.com
+      #   api_key: $NPM_TOKEN
+      #   on:
+      #     tags: true
+    - stage: docs
+      script: yarn docs:build
+      deploy:
+        provider: pages
+        github_token: $GH_TOKEN
+        local_dir: docs/.vuepress/dist
+        skip_cleanup: true
+        on:
+          branch: master
