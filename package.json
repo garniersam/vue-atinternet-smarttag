@@ -1,6 +1,6 @@
 {
   "name": "vue-atinternet-smarttag",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AtInternet SmartTag implementation as a VueJs plugin and click tracking directive.",
   "main": "dist/index.min.js",
   "directories": {
