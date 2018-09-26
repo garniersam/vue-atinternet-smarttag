@@ -10,7 +10,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "rollup -c",
-    "test": "jest --colors --coverage --coverageReporters=text-lcov | coveralls"
+    "test": "jest --colors --coverage --coverageReporters=text-lcov | codacy-coverage"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "babel-jest": "^23.6.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "codacy-coverage": "^3.1.0",
     "coveralls": "^3.0.2",
     "jest": "^23.6.0",
     "jest-coverage-badges": "^1.0.0",
