@@ -42,7 +42,7 @@ const router = new Router({
 
 // At Internet Tagging, "to.meta.atInternet" can be an object or a function returning an object
 router.afterEach((to, from) => {
-  if (to.meta.atInternet) {
+  if (to.meta.smartTag) {
     Vue.smartTag.sendPage(typeof to.meta.smartTag === 'function' ? to.meta.smartTag() : to.meta.smartTag)
   }
 })
